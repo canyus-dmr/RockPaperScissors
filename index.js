@@ -1,4 +1,20 @@
+function getComputerChoice() {
+    let a = Math.floor((Math.random() * 3) + 1);
+    if (a === 1) {
+        return "Rock";
+    } else if (a === 2) {
+        return "Paper";
+    } else {
+        return "Scissors";
+    }
+}
+
+const playerSelection = null; 
+const computerSelection = null; 
+
 function playRound(playerSelection, computerSelection) {
+    playerSelection = prompt("Your selection: ");
+    computerSelection = getComputerChoice();
     if (playerSelection === "Rock" && computerSelection === "Paper") {
         return "You Lose! Paper beats Rock";
     } else if (playerSelection === "Paper" && computerSelection === "Rock") {
@@ -12,25 +28,11 @@ function playRound(playerSelection, computerSelection) {
     } else {
         return "You Lose! Scissors beats Paper";
     }
-
-};
-function getComputerChoice () {
-    let a = (Math.random * 3) + 1; 
-    if (a === 1) {
-        return "Rock";
-    } else if (a === 2) {
-        return "Paper";        
-    } else {
-        return "Scissors";
-    }
-    
 }
-;
-const playerSelection = "rock";
-const computerSelection = getComputerChoice();
 
 function game() {
     for (let i = 0; i < 5; i++) {
-        playRound();
+        console.log(playRound(playerSelection, computerSelection));
     }
-};
+}
+game();
